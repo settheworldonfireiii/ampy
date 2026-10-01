@@ -1,0 +1,145 @@
+wandb: Detected [openai, vertexai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai
+Checkpoint tracker file does not exist: /mnt/data2/radke149/AMPO//Qwen2.5-7B-Ins/checkpoints/AMPO/Qwen2.5-7B-Ins-AMPO/latest_checkpointed_iteration.txt
+Training from scratch
+Training Progress:   0%|          | 0/510 [00:00<?, ?it/s]INFO:2026-09-22 17:23:35,333:Sample 0: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 17:23:45,076:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 17:23:45,088:Targeted injection: sample 0, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 0, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:45,089:Targeted injection: sample 0, position 5 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 0, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:45,090:Targeted injection: sample 0, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 0, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:45,091:Targeted injection: sample 0, position 7 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 0, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:45,092:Sample 1: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 17:23:54,240:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 17:23:54,265:Targeted injection: sample 1, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 1, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:54,267:Targeted injection: sample 1, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 1, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:54,268:Targeted injection: sample 1, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 1, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:23:54,270:Sample 2: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 17:23:54,271:Sample 3: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 17:23:54,272:Sample 4: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 17:24:04,065:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 17:24:04,075:Targeted injection: sample 4, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 4, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:24:04,076:Targeted injection: sample 4, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 4, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:24:04,078:Targeted injection: sample 4, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 4, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:24:04,078:Targeted injection: sample 4, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 4, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 17:24:04,080:Sample 5: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 17:24:04,082:Sample 6: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 17:24:04,084:Sample 7: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 17:24:04,084:Injection decisions: 3/8 samples will receive off-policy guidance
+INFO:2026-09-22 17:24:04,085:Process responses with pre-computed scores: 64 total scores, injection_rate: 0.375, avg_effective_targets=2.0, avg_prefix_ratio: 0.172
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=3544456, ip=128.101.106.33, actor_id=c4a5318aae8d3eeec8ada23801000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x794a0a35cfa0>)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/single_controller/ray/base.py", line 720, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/single_controller/base/decorator.py", line 430, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/adaptive_mix_src/mix_fsdp_worker.py", line 685, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/adaptive_mix_src/mix_actor.py", line 167, in update_policy
+    entropy, log_prob = self._forward_micro_batch(
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/workers/actor/dp_actor.py", line 256, in _forward_micro_batch
+    output = self.actor_module(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 864, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/models/transformers/dense_common.py", line 90, in forward_with_torch_backend
+    outputs = forward_base_model(
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/models/transformers/dense_common.py", line 55, in forward_base_model
+    outputs = self.model(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 540, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 496, in checkpoint
+    ret = function(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 864, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 278, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 59, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.28 GiB. GPU 0 has a total capacity of 23.64 GiB of which 1.21 GiB is free. Including non-PyTorch memory, this process has 22.41 GiB memory in use. Of the allocated memory 28.70 GiB is allocated by PyTorch, with 257.95 MiB allocated in private pools (e.g., CUDA Graphs), and 3.21 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_update_actor()[39m (pid=3544452, ip=128.101.106.33, actor_id=3ba9989c5cc39758cdb6bff001000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7018d412ceb0>)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/single_controller/ray/base.py", line 720, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/single_controller/base/decorator.py", line 430, in inner
+    return func(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/adaptive_mix_src/mix_fsdp_worker.py", line 685, in update_actor
+    metrics = self.actor.update_policy(data=data)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/adaptive_mix_src/mix_actor.py", line 167, in update_policy
+    entropy, log_prob = self._forward_micro_batch(
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/workers/actor/dp_actor.py", line 256, in _forward_micro_batch
+    output = self.actor_module(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 864, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/models/transformers/dense_common.py", line 90, in forward_with_torch_backend
+    outputs = forward_base_model(
+  File "/mnt/data2/radke149/AMPO/ampo/verl/verl/models/transformers/dense_common.py", line 55, in forward_base_model
+    outputs = self.model(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 540, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 496, in checkpoint
+    ret = function(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 864, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 278, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 59, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.28 GiB. GPU 0 has a total capacity of 23.64 GiB of which 1.21 GiB is free. Including non-PyTorch memory, this process has 22.41 GiB memory in use. Of the allocated memory 28.70 GiB is allocated by PyTorch, with 257.95 MiB allocated in private pools (e.g., CUDA Graphs), and 3.21 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

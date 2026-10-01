@@ -1,0 +1,35 @@
+{
+  "os": "Linux-6.11.0-17-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.21",
+  "startedAt": "2026-09-22T20:52:45.400267Z",
+  "args": [
+    "--node-ip-address=128.101.106.33",
+    "--node-manager-port=37593",
+    "--object-store-name=/tmp/ray/session_2026-09-22_15-50-47_853752_2669432/sockets/plasma_store",
+    "--raylet-name=/tmp/ray/session_2026-09-22_15-50-47_853752_2669432/sockets/raylet",
+    "--redis-address=None",
+    "--metrics-agent-port=0",
+    "--logging-rotate-bytes=536870912",
+    "--logging-rotate-backup-count=5",
+    "--runtime-env-agent-port=0",
+    "--gcs-address=128.101.106.33:43285",
+    "--session-name=session_2026-09-22_15-50-47_853752_2669432",
+    "--temp-dir=/tmp/ray",
+    "--webui=",
+    "--cluster-id=4033145607f8a668e3f910eb367c8e9ccb714013c8a3d72f1081c8ba",
+    "--worker-id=942288bbb58b4b8ab212be541568444545cec891977c94306706dfa6",
+    "--worker-launch-time-ms=1790110256457",
+    "--node-id=cb1c7090a093357363afe2fb422fb04b44817aaf0ddb7bfaeb92cf82",
+    "--runtime-env-hash=-1053485826"
+  ],
+  "program": "/mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/ray/_private/workers/default_worker.py",
+  "git": {
+    "remote": "https://github.com/EnigmaYYYY/AMPO",
+    "commit": "647e2e4de7f0bdcd2787fa9941d4dbc317facb7e"
+  },
+  "email": "radke149@umn.edu",
+  "root": "/mnt/data2/radke149/AMPO/ampo/verl",
+  "host": "cs-u-iteb361",
+  "executable": "/mnt/data2/radke149/miniconda3/envs/ampo/bin/python3",
+  "writerId": "yu9nskwwuddq3k7dp86huommuoavnfdf"
+}

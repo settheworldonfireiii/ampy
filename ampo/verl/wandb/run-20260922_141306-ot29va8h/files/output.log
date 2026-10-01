@@ -1,0 +1,399 @@
+wandb: Detected [openai, vertexai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai
+Checkpoint tracker file does not exist: /mnt/data2/radke149/AMPO//Qwen2.5-7B-Ins/checkpoints/AMPO/Qwen2.5-7B-Ins-AMPO/latest_checkpointed_iteration.txt
+Training from scratch
+Training Progress:   0%|          | 0/510 [00:00<?, ?it/s]INFO:2026-09-22 14:20:07,835:Sample 0: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:20:19,717:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:20:19,729:Targeted injection: sample 0, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 0, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:19,730:Targeted injection: sample 0, position 1 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 0, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:19,731:Targeted injection: sample 0, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 0, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:19,732:Targeted injection: sample 0, position 5 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 0, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:19,733:Sample 1: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:20:28,506:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:20:28,521:Targeted injection: sample 1, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 1, position 2, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:28,522:Targeted injection: sample 1, position 5 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 1, position 5, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:28,524:Sample 2: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:20:28,525:Sample 3: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:20:28,527:Sample 4: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:20:37,951:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:20:37,964:Targeted injection: sample 4, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 4, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:37,966:Targeted injection: sample 4, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 4, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:37,967:Targeted injection: sample 4, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 4, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:37,968:Targeted injection: sample 4, position 7 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 4, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:37,970:Sample 5: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:20:37,971:Sample 6: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:20:37,972:Sample 7: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:20:37,974:Sample 8: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:20:47,077:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:20:47,088:Targeted injection: sample 8, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 8, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:47,089:Targeted injection: sample 8, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 8, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:47,090:Targeted injection: sample 8, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 8, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:47,091:Targeted injection: sample 8, position 7 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 8, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:47,092:Sample 9: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:20:47,093:Sample 10: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:20:47,095:Sample 11: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:20:55,889:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:20:55,894:Targeted injection: sample 11, position 5 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 11, position 5, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:55,896:Targeted injection: sample 11, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 11, position 7, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:20:55,898:Sample 12: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:20:55,899:Sample 13: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:21:05,182:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:05,188:Targeted injection: sample 13, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 13, position 7, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:05,190:Sample 14: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:21:05,192:Sample 15: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:21:05,196:off_policy responses num <= 1, no sorting needed
+INFO:2026-09-22 14:21:05,202:Targeted injection: sample 15, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 15, position 4, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:05,204:Sample 16: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:21:14,166:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2]
+INFO:2026-09-22 14:21:14,174:Targeted injection: sample 16, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 16, position 1, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:14,175:Targeted injection: sample 16, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 16, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:14,176:Targeted injection: sample 16, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 16, position 6, effective_k=3, prefix_ratio: 1.000, old_score: -0.10, new_score: 1.000
+INFO:2026-09-22 14:21:14,177:Sample 17: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:21:23,012:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:23,024:Targeted injection: sample 17, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 17, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:23,026:Targeted injection: sample 17, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 17, position 6, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:23,027:Targeted injection: sample 17, position 7 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 17, position 7, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:21:23,028:Sample 18: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:21:32,080:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:32,084:Targeted injection: sample 18, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 18, position 3, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:32,085:Sample 19: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:21:32,087:Sample 20: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:21:41,061:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:41,067:Targeted injection: sample 20, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 20, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:41,069:Targeted injection: sample 20, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 20, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:41,070:Targeted injection: sample 20, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 20, position 7, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:41,072:Sample 21: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:21:41,074:Sample 22: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:21:50,035:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:50,045:Targeted injection: sample 22, position 1 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 22, position 1, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:50,048:Targeted injection: sample 22, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 22, position 4, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:50,050:Sample 23: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:21:58,857:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:21:58,868:Targeted injection: sample 23, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 23, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:58,870:Targeted injection: sample 23, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 23, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:58,871:Targeted injection: sample 23, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 23, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:21:58,872:Targeted injection: sample 23, position 4 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 23, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:21:58,875:Sample 24: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:21:58,877:Sample 25: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:21:58,880:Sample 26: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:21:58,882:Sample 27: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:22:08,697:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:22:08,706:Targeted injection: sample 27, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 27, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:08,708:Targeted injection: sample 27, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 27, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:08,709:Targeted injection: sample 27, position 3 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 27, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:08,710:Targeted injection: sample 27, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 27, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:08,712:Sample 28: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:22:08,714:Sample 29: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:22:08,715:Sample 30: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:22:08,721:off_policy responses num <= 1, no sorting needed
+INFO:2026-09-22 14:22:08,727:Targeted injection: sample 30, position 5 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 30, position 5, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:08,730:Sample 31: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:22:08,732:Sample 32: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:22:17,644:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:22:17,652:Targeted injection: sample 32, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 32, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:22:17,653:Targeted injection: sample 32, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 32, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:22:17,654:Targeted injection: sample 32, position 3 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 32, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:17,656:Sample 33: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:22:17,657:Sample 34: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:22:26,702:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:22:26,747:Targeted injection: sample 34, position 0, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:22:26,747:Targeted injection: sample 34, position 0 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 34, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:22:26,748:Targeted injection: sample 34, position 2, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:22:26,749:Targeted injection: sample 34, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 34, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:22:26,750:Targeted injection: sample 34, position 6, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:22:26,751:Targeted injection: sample 34, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 34, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:22:26,751:Targeted injection: sample 34, position 7, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:22:26,752:Targeted injection: sample 34, position 7 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 34, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:22:26,753:Sample 35: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:22:26,754:Sample 36: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:22:35,789:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:22:35,795:Targeted injection: sample 36, position 4 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 36, position 4, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:35,797:Sample 37: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:22:35,800:off_policy responses num <= 1, no sorting needed
+INFO:2026-09-22 14:22:35,804:Targeted injection: sample 37, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 37, position 1, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:35,806:Sample 38: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:22:35,808:Sample 39: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:22:44,509:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1]
+INFO:2026-09-22 14:22:44,516:Targeted injection: sample 39, position 5 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 39, position 5, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:44,518:Targeted injection: sample 39, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 39, position 7, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:44,520:Sample 40: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:22:53,276:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:22:53,284:Targeted injection: sample 40, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 40, position 7, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:22:53,285:Sample 41: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:23:02,981:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:23:02,998:Targeted injection: sample 41, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 41, position 1, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:03,000:Targeted injection: sample 41, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 41, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:03,002:Targeted injection: sample 41, position 5 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 41, position 5, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:03,005:Sample 42: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:23:11,960:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.0, 0.0], sorted_indices = [0, 1, 2]
+INFO:2026-09-22 14:23:11,979:Targeted injection: sample 42, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 42, position 0, effective_k=2, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:23:11,980:Targeted injection: sample 42, position 6, this off-policy score: 0.0 is too low
+INFO:2026-09-22 14:23:11,981:Targeted injection: sample 42, position 6 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 42, position 6, effective_k=2, prefix_ratio: 1.000, old_score: 0.10, new_score: 0.000
+INFO:2026-09-22 14:23:11,982:Sample 43: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:23:21,144:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:23:21,149:Targeted injection: sample 43, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 43, position 2, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:21,150:Targeted injection: sample 43, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 43, position 7, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:21,152:Sample 44: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:23:30,221:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:23:30,245:Targeted injection: sample 44, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 44, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:30,247:Targeted injection: sample 44, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 44, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.900
+INFO:2026-09-22 14:23:30,248:Targeted injection: sample 44, position 5 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 44, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:30,250:Targeted injection: sample 44, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 44, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:30,252:Sample 45: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:23:30,254:Sample 46: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:23:39,067:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.0], sorted_indices = [0, 1]
+INFO:2026-09-22 14:23:39,072:Targeted injection: sample 46, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 46, position 3, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:39,074:Sample 47: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:23:47,977:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:23:47,986:Targeted injection: sample 47, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 47, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:47,988:Targeted injection: sample 47, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 47, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:47,990:Targeted injection: sample 47, position 4 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 47, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:47,992:Targeted injection: sample 47, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 47, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:47,994:Sample 48: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:23:47,995:Sample 49: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:23:47,997:Sample 50: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:23:57,003:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:23:57,013:Targeted injection: sample 50, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 50, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:57,015:Targeted injection: sample 50, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 50, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:23:57,017:Targeted injection: sample 50, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 50, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:23:57,019:Sample 51: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:24:06,218:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:06,223:Targeted injection: sample 51, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 51, position 0, effective_k=2, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:06,225:Targeted injection: sample 51, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 51, position 6, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:06,229:Sample 52: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:24:06,231:Sample 53: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:24:06,234:Sample 54: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:24:06,235:Sample 55: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:24:15,606:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:15,612:Targeted injection: sample 55, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 55, position 1, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:15,613:Targeted injection: sample 55, position 3 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 55, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:15,615:Targeted injection: sample 55, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 55, position 6, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:15,616:Sample 56: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:24:15,617:Sample 57: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:24:24,588:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:24,595:Targeted injection: sample 57, position 0 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 57, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:24,596:Targeted injection: sample 57, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 57, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:24,598:Targeted injection: sample 57, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 57, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:24,600:Sample 58: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:24:33,729:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:33,732:Targeted injection: sample 58, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 58, position 3, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:33,734:Sample 59: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:24:33,735:Sample 60: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:24:42,653:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:42,664:Targeted injection: sample 60, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 60, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:42,665:Targeted injection: sample 60, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 60, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:42,667:Targeted injection: sample 60, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 60, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:42,668:Targeted injection: sample 60, position 7 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 60, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:24:42,670:Sample 61: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:24:51,638:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:24:51,648:Targeted injection: sample 61, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 61, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:51,649:Targeted injection: sample 61, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 61, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:51,651:Targeted injection: sample 61, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 61, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:51,652:Targeted injection: sample 61, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 61, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:24:51,653:Sample 62: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:25:01,001:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:01,018:Targeted injection: sample 62, position 1 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 62, position 1, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:01,020:Targeted injection: sample 62, position 3 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 62, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:01,022:Targeted injection: sample 62, position 5 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 62, position 5, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:01,025:Sample 63: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:25:01,026:Sample 64: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:25:10,488:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:10,496:Targeted injection: sample 64, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 64, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:10,498:Targeted injection: sample 64, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 64, position 6, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:10,499:Targeted injection: sample 64, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 64, position 7, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:10,501:Sample 65: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:25:10,502:Sample 66: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:25:10,504:Sample 67: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:25:10,505:Sample 68: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:25:19,309:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1]
+INFO:2026-09-22 14:25:19,342:Targeted injection: sample 68, position 3, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:25:19,343:Targeted injection: sample 68, position 3 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 68, position 3, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:25:19,344:Targeted injection: sample 68, position 6, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:25:19,345:Targeted injection: sample 68, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 68, position 6, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:25:19,347:Sample 69: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:25:28,241:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:28,263:Targeted injection: sample 69, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 69, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:28,265:Targeted injection: sample 69, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 69, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:28,266:Targeted injection: sample 69, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 69, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:28,267:Targeted injection: sample 69, position 7 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 69, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:28,269:Sample 70: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:25:37,123:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:37,127:Targeted injection: sample 70, position 1 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 70, position 1, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:37,129:Sample 71: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:25:37,130:Sample 72: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:25:37,131:Sample 73: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:25:46,075:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:46,084:Targeted injection: sample 73, position 0 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 73, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:25:46,086:Targeted injection: sample 73, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 73, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:46,087:Targeted injection: sample 73, position 4 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 73, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:25:46,089:Targeted injection: sample 73, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 73, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:46,090:Sample 74: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:25:55,293:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.0, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:25:55,321:Targeted injection: sample 74, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 74, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:55,323:Targeted injection: sample 74, position 1, this off-policy score: 0.0 is too low
+INFO:2026-09-22 14:25:55,324:Targeted injection: sample 74, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 74, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.000
+INFO:2026-09-22 14:25:55,325:Targeted injection: sample 74, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 74, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:25:55,326:Targeted injection: sample 74, position 5, this off-policy score: 0.0 is too low
+INFO:2026-09-22 14:25:55,327:Targeted injection: sample 74, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 74, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.000
+INFO:2026-09-22 14:25:55,329:Sample 75: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:25:55,330:Sample 76: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:25:55,331:Sample 77: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:26:04,947:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:04,968:Targeted injection: sample 77, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 77, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:04,969:Targeted injection: sample 77, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 77, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:04,970:Targeted injection: sample 77, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 77, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:04,971:Targeted injection: sample 77, position 4 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 77, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:04,973:Sample 78: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:26:14,073:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:14,091:Targeted injection: sample 78, position 0 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 78, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:14,092:Targeted injection: sample 78, position 4 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 78, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:14,094:Targeted injection: sample 78, position 5 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 78, position 5, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:14,096:Sample 79: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:26:14,098:Sample 80: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:26:22,926:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2]
+INFO:2026-09-22 14:26:22,937:Targeted injection: sample 80, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 80, position 0, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:22,938:Targeted injection: sample 80, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 80, position 1, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:22,941:Sample 81: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:26:31,701:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:31,708:Targeted injection: sample 81, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 81, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:26:31,709:Targeted injection: sample 81, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 81, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:26:31,710:Targeted injection: sample 81, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 81, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:26:31,711:Targeted injection: sample 81, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 81, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:31,712:Sample 82: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:26:31,713:Sample 83: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:26:40,624:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:40,631:Targeted injection: sample 83, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 83, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:40,632:Targeted injection: sample 83, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 83, position 6, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:40,633:Targeted injection: sample 83, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 83, position 7, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:40,636:Sample 84: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:26:49,697:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:49,704:Targeted injection: sample 84, position 3 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 84, position 3, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:49,705:Targeted injection: sample 84, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 84, position 7, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:49,707:Sample 85: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:26:58,725:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:26:58,734:Targeted injection: sample 85, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 85, position 0, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:26:58,738:Sample 86: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:26:58,740:Sample 87: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:27:07,449:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:07,457:Targeted injection: sample 87, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 87, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:07,459:Targeted injection: sample 87, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 87, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:07,460:Targeted injection: sample 87, position 6 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 87, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:07,461:Targeted injection: sample 87, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 87, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:07,463:Sample 88: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:27:07,464:Sample 89: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:27:07,466:Sample 90: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:27:16,409:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:16,414:Targeted injection: sample 90, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 90, position 1, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:16,416:Targeted injection: sample 90, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 90, position 2, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:16,422:Sample 91: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:27:16,425:Sample 92: 1/8 correct, success_rate=0.125, threshold=0.5
+INFO:2026-09-22 14:27:25,271:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:25,278:Targeted injection: sample 92, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 92, position 3, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:27:25,280:Targeted injection: sample 92, position 4 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 92, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:27:25,281:Targeted injection: sample 92, position 6 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 92, position 6, effective_k=3, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:27:25,282:Sample 93: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:27:25,283:Sample 94: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:27:25,284:Sample 95: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:27:34,206:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:34,212:Targeted injection: sample 95, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 95, position 4, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:34,213:Targeted injection: sample 95, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 95, position 6, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:34,214:Sample 96: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:27:43,403:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:43,407:Targeted injection: sample 96, position 7 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 96, position 7, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:43,409:Sample 97: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:27:43,410:Sample 98: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:27:43,412:Sample 99: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:27:52,388:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:27:52,396:Targeted injection: sample 99, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 99, position 6, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:52,397:Targeted injection: sample 99, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 99, position 7, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:27:52,400:Sample 100: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:28:01,680:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.0], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:01,712:Targeted injection: sample 100, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 100, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:01,714:Targeted injection: sample 100, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 100, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:01,715:Targeted injection: sample 100, position 3, this off-policy score: 0.0 is too low
+INFO:2026-09-22 14:28:01,716:Targeted injection: sample 100, position 3 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 100, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.000
+INFO:2026-09-22 14:28:01,718:Targeted injection: sample 100, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 100, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:01,721:Sample 101: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:28:01,723:Sample 102: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:28:11,206:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:11,231:Targeted injection: sample 102, position 0, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:11,232:Targeted injection: sample 102, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 102, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:11,233:Targeted injection: sample 102, position 2, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:11,234:Targeted injection: sample 102, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 102, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:11,235:Targeted injection: sample 102, position 4, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:11,236:Targeted injection: sample 102, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 102, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:11,237:Targeted injection: sample 102, position 5, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:11,237:Targeted injection: sample 102, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 102, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:11,240:Sample 103: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:28:11,250:Sample 104: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:28:19,996:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:20,006:Targeted injection: sample 104, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 104, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:20,007:Targeted injection: sample 104, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 104, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:28:20,009:Targeted injection: sample 104, position 4 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 104, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:20,010:Targeted injection: sample 104, position 6 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 104, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:20,012:Sample 105: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:28:29,271:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:29,290:Targeted injection: sample 105, position 0 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 105, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:29,291:Targeted injection: sample 105, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 105, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:29,292:Targeted injection: sample 105, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 105, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:29,294:Targeted injection: sample 105, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 105, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:29,295:Sample 106: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:28:29,297:Sample 107: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:28:38,455:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:38,483:Targeted injection: sample 107, position 0, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:38,484:Targeted injection: sample 107, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 107, position 0, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:38,485:Targeted injection: sample 107, position 2, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:38,486:Targeted injection: sample 107, position 2 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 107, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:38,487:Targeted injection: sample 107, position 3, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:38,488:Targeted injection: sample 107, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 107, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:38,489:Targeted injection: sample 107, position 4, this off-policy score: 0.10000000149011612 is too low
+INFO:2026-09-22 14:28:38,490:Targeted injection: sample 107, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 107, position 4, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 0.100
+INFO:2026-09-22 14:28:38,492:Sample 108: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:28:38,494:Sample 109: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:28:38,496:Sample 110: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:28:47,784:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:47,788:Targeted injection: sample 110, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 110, position 3, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:47,790:Sample 111: 3/8 correct, success_rate=0.375, threshold=0.5
+INFO:2026-09-22 14:28:57,005:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:28:57,009:Targeted injection: sample 111, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 111, position 2, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:28:57,011:Sample 112: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:29:06,179:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:29:06,191:Targeted injection: sample 112, position 1 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 112, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:06,192:Targeted injection: sample 112, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 112, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:06,193:Targeted injection: sample 112, position 6 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 112, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:06,194:Targeted injection: sample 112, position 7 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 112, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:06,195:Sample 113: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:29:06,196:Sample 114: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:29:06,198:Sample 115: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:29:15,155:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2]
+INFO:2026-09-22 14:29:15,165:Targeted injection: sample 115, position 0 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 115, position 0, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:15,166:Targeted injection: sample 115, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 115, position 2, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:15,167:Targeted injection: sample 115, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 115, position 4, effective_k=3, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:15,168:Sample 116: 6/8 correct, success_rate=0.750, threshold=0.5
+INFO:2026-09-22 14:29:15,170:Sample 117: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:29:15,172:off_policy responses num <= 1, no sorting needed
+INFO:2026-09-22 14:29:15,175:Targeted injection: sample 117, position 3 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 117, position 3, effective_k=1, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:15,176:Sample 118: 8/8 correct, success_rate=1.000, threshold=0.5
+INFO:2026-09-22 14:29:15,177:Sample 119: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:29:15,179:Sample 120: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:29:24,183:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:29:24,191:Targeted injection: sample 120, position 1 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 120, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:24,193:Targeted injection: sample 120, position 3 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 120, position 3, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:24,194:Targeted injection: sample 120, position 5 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 120, position 5, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:24,195:Targeted injection: sample 120, position 7 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 120, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:24,197:Sample 121: 7/8 correct, success_rate=0.875, threshold=0.5
+INFO:2026-09-22 14:29:24,199:Sample 122: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:29:24,201:Sample 123: 4/8 correct, success_rate=0.500, threshold=0.5
+INFO:2026-09-22 14:29:24,202:Sample 124: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:29:24,204:Sample 125: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-22 14:29:33,554:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1]
+INFO:2026-09-22 14:29:33,563:Targeted injection: sample 125, position 2 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 125, position 2, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:33,564:Targeted injection: sample 125, position 5 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 125, position 5, effective_k=2, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-22 14:29:33,567:Sample 126: 5/8 correct, success_rate=0.625, threshold=0.5
+INFO:2026-09-22 14:29:33,570:Sample 127: 2/8 correct, success_rate=0.250, threshold=0.5
+INFO:2026-09-22 14:29:42,586:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-22 14:29:42,591:Targeted injection: sample 127, position 2 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 127, position 2, effective_k=2, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:42,592:Targeted injection: sample 127, position 4 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 127, position 4, effective_k=2, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-22 14:29:42,593:Injection decisions: 67/128 samples will receive off-policy guidance
+INFO:2026-09-22 14:29:42,594:Process responses with pre-computed scores: 1024 total scores, injection_rate: 0.523, avg_effective_targets=2.0, avg_prefix_ratio: 0.175

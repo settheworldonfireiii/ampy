@@ -1,0 +1,13 @@
+wandb: Detected [openai, vertexai] in use.
+wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+wandb: For more information, check out the docs at: https://weave-docs.wandb.ai
+Checkpoint tracker file does not exist: /mnt/data2/radke149/AMPO//Qwen2.5-7B-Ins/checkpoints/AMPO/Qwen2.5-7B-Ins-AMPO/latest_checkpointed_iteration.txt
+Training from scratch
+Training Progress:   0%|          | 0/510 [00:00<?, ?it/s]INFO:2026-09-29 18:34:14,422:Sample 0: 0/8 correct, success_rate=0.000, threshold=0.5
+INFO:2026-09-29 18:34:27,050:Sorting batch by rm_scores: scores = [0.10000000149011612, 0.10000000149011612, 0.10000000149011612, 0.10000000149011612], sorted_indices = [0, 1, 2, 3]
+INFO:2026-09-29 18:34:27,061:Targeted injection: sample 0, position 1 (incorrect->off-policy), Using teacher source: OpenR1-Qwen-7B for sample 0, position 1, effective_k=4, prefix_ratio: 1.000, old_score: 0.10, new_score: 1.000
+INFO:2026-09-29 18:34:27,062:Targeted injection: sample 0, position 2 (incorrect->off-policy), Using teacher source: AceReason-Nemotron-1.1-7B for sample 0, position 2, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-29 18:34:27,063:Targeted injection: sample 0, position 6 (incorrect->off-policy), Using teacher source: DeepSeek-R1-Distill-Qwen-7B for sample 0, position 6, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-29 18:34:27,064:Targeted injection: sample 0, position 7 (incorrect->off-policy), Using teacher source: Qwen3-8B_thinking for sample 0, position 7, effective_k=4, prefix_ratio: 1.000, old_score: 0.00, new_score: 1.000
+INFO:2026-09-29 18:34:27,065:Injection decisions: 1/1 samples will receive off-policy guidance
+INFO:2026-09-29 18:34:27,066:Process responses with pre-computed scores: 8 total scores, injection_rate: 1.000, avg_effective_targets=2.0, avg_prefix_ratio: 0.500

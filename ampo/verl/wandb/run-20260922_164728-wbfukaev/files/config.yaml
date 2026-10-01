@@ -1,0 +1,625 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            ou9l810etr9o6l8ojbbypvqm5rsckp68:
+                args:
+                    - --node-ip-address=128.101.106.33
+                    - --node-manager-port=45051
+                    - --object-store-name=/tmp/ray/session_2026-09-22_16-45-36_939086_3206648/sockets/plasma_store
+                    - --raylet-name=/tmp/ray/session_2026-09-22_16-45-36_939086_3206648/sockets/raylet
+                    - --redis-address=None
+                    - --metrics-agent-port=0
+                    - --logging-rotate-bytes=536870912
+                    - --logging-rotate-backup-count=5
+                    - --runtime-env-agent-port=0
+                    - --gcs-address=128.101.106.33:43891
+                    - --session-name=session_2026-09-22_16-45-36_939086_3206648
+                    - --temp-dir=/tmp/ray
+                    - --webui=
+                    - --cluster-id=5ffe9d1f75454f9ce76c7a69ade624c3e80ea92fadb0ddd3526474a7
+                    - --worker-id=bd533bdcaef669769c46a18fb53ff2492a46ba53685a04ac0291fca6
+                    - --worker-launch-time-ms=1790113541439
+                    - --node-id=27dbc3235402d392f8e043a0b7a9a5ce74b8189fd49b7bdea592abe3
+                    - --runtime-env-hash=-1053485826
+                cpu_count: 32
+                cpu_count_logical: 64
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "1887977426944"
+                        used: "1757093117952"
+                email: radke149@umn.edu
+                executable: /mnt/data2/radke149/miniconda3/envs/ampo/bin/python3
+                git:
+                    commit: 647e2e4de7f0bdcd2787fa9941d4dbc317facb7e
+                    remote: https://github.com/EnigmaYYYY/AMPO
+                gpu: Quadro RTX 6000
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-6f80c935-f4a5-ebcd-cec6-db82fdf30a4f
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-4d7433d5-d193-87da-7c2f-8c0f9cbf16f9
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-d354f671-1a04-542b-896a-d038984946a3
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-85c9d110-96cf-3d95-8e00-623e3ecd7486
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-74e8544b-e0e2-2f30-1f56-4bb388352529
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-8ebc98a9-8cc4-ea42-ad91-4e05ee2cea4a
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-40355896-c9b4-33ed-0370-dca7df5dd611
+                    - architecture: Turing
+                      cudaCores: 4608
+                      memoryTotal: "25769803776"
+                      name: Quadro RTX 6000
+                      uuid: GPU-1a50996b-d800-6d1f-3abd-0ca27facdbc2
+                host: cs-u-iteb361
+                memory:
+                    total: "540639227904"
+                os: Linux-6.11.0-17-generic-x86_64-with-glibc2.39
+                program: /mnt/data2/radke149/miniconda3/envs/ampo/lib/python3.10/site-packages/ray/_private/workers/default_worker.py
+                python: CPython 3.10.21
+                root: /mnt/data2/radke149/AMPO/ampo/verl
+                startedAt: "2026-09-22T21:47:28.838952Z"
+                writerId: ou9l810etr9o6l8ojbbypvqm5rsckp68
+        m: []
+        python_version: 3.10.21
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 30
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 95
+                - 98
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 30
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+                - 95
+                - 98
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.10.21
+            "5": 0.30.0
+            "6": 4.51.1
+            "12": 0.30.0
+            "13": linux-x86_64
+actor_rollout_ref:
+    value:
+        actor:
+            _target_: verl.workers.config.FSDPActorConfig
+            adaptive_temperature_clip: -1
+            adaptive_temperature_target_entropy: 1
+            all_max_clip: -1
+            alpha_lr: 0.01
+            checkpoint:
+                _target_: verl.trainer.config.CheckpointConfig
+                async_save: false
+                load_contents:
+                    - model
+                    - optimizer
+                    - extra
+                save_contents:
+                    - model
+                    - optimizer
+                    - extra
+            clip_ratio: 0.2
+            clip_ratio_c: 10
+            clip_ratio_high: 0.2
+            clip_ratio_low: 0.2
+            debug: false
+            entropy_checkpointing: false
+            entropy_coeff: 0.001
+            entropy_from_logits_with_chunking: false
+            fsdp_config:
+                _target_: verl.workers.config.FSDPEngineConfig
+                forward_prefetch: false
+                fsdp_size: -1
+                offload_policy: false
+                optimizer_offload: true
+                param_offload: true
+                reshard_after_forward: true
+                wrap_policy:
+                    min_num_params: 0
+            grad_clip: 1
+            kl_loss_coef: 0
+            kl_loss_type: low_var_kl
+            loss_agg_mode: token-mean
+            loss_remove_clip: false
+            loss_remove_token_mean: true
+            off_policy_cliprange: 0.2
+            off_policy_loss_impl: seq
+            off_policy_max_clip: -1
+            off_policy_min_clip: -1
+            off_policy_normalize: false
+            off_policy_reshape: p_div_p_0.1
+            off_policy_reshape_pow_exp: 0.5
+            off_policy_reshape_weight: 0.1
+            on_policy_reshape: no_reshape
+            on_policy_reshape_pow_exp: 0.5
+            on_policy_reshape_weight: 0.1
+            optim:
+                _target_: verl.workers.config.FSDPOptimizerConfig
+                lr: 1e-06
+                lr_warmup_steps: 0
+                lr_warmup_steps_ratio: 0
+                min_lr_ratio: 0
+                num_cycles: 0.5
+                total_training_steps: 510
+                warmup_style: constant
+                weight_decay: 0.1
+            policy_loss:
+                _target_: verl.workers.config.PolicyLossConfig
+                clip_cov_lb: 1
+                clip_cov_ratio: 0.0002
+                clip_cov_ub: 5
+                kl_cov_ratio: 0.0002
+                loss_mode: vanilla
+                ppo_kl_coef: 0.1
+            ppo_epochs: 1
+            ppo_kl_loss_coef: 0.01
+            ppo_max_token_len_per_gpu: 9216
+            ppo_micro_batch_size: 64
+            ppo_micro_batch_size_per_gpu: 64
+            ppo_mini_batch_size: 32
+            sft_loss_coef: 1
+            sft_prefix_reward_weight: 1
+            shuffle: false
+            strategy: fsdp
+            ulysses_sequence_parallel_size: 1
+            use_adaptive_temperature: false
+            use_adaptive_temperature_fixed: false
+            use_dynamic_bsz: true
+            use_fused_kernels: true
+            use_kl_loss: false
+            use_off_policy_clip: false
+            use_off_policy_loss: true
+            use_off_policy_probs: false
+            use_ppo_kl_loss: false
+            use_remove_padding: false
+            use_sft_multitask_loss: false
+            use_sft_reward: false
+            use_target_lst: true
+            use_torch_compile: true
+        hybrid_engine: true
+        model:
+            custom_chat_template: null
+            enable_activation_offload: false
+            enable_gradient_checkpointing: true
+            exclude_modules: null
+            external_lib: null
+            fused_kernel_options:
+                impl_backend: torch
+            lora_alpha: 16
+            lora_rank: 0
+            override_config:
+                max_position_embeddings: 32768
+            path: /mnt/data2/radke149/models/Qwen2.5-7B-Instruct
+            target_modules: all-linear
+            trust_remote_code: false
+            use_fused_kernels: true
+            use_liger: false
+            use_remove_padding: false
+            use_shm: false
+        nccl_timeout: 600
+        profiler:
+            _target_: verl.utils.profiler.ProfilerConfig
+            all_ranks: false
+            discrete: false
+            ranks: []
+        ref:
+            entropy_checkpointing: false
+            entropy_from_logits_with_chunking: false
+            fsdp_config:
+                _target_: verl.workers.config.FSDPEngineConfig
+                forward_prefetch: false
+                param_offload: true
+                reshard_after_forward: true
+                wrap_policy:
+                    min_num_params: 0
+            log_prob_max_token_len_per_gpu: 9216
+            log_prob_micro_batch_size: 128
+            log_prob_micro_batch_size_per_gpu: 128
+            log_prob_use_dynamic_bsz: true
+            model: null
+            strategy: fsdp
+            ulysses_sequence_parallel_size: 1
+            use_ref: false
+            use_torch_compile: true
+        rollout:
+            agent:
+                agent_loop_config_path: null
+                custom_async_server:
+                    name: null
+                    path: null
+                num_workers: 8
+            calculate_log_probs: false
+            cudagraph_capture_sizes: null
+            disable_log_stats: true
+            do_sample: true
+            dtype: float16
+            enable_chunked_prefill: true
+            enforce_eager: true
+            engine_kwargs:
+                sglang:
+                    attention_backend: null
+                vllm:
+                    disable_mm_preprocessor_cache: false
+                    swap_space: 0
+            free_cache_engine: true
+            gpu_memory_utilization: 0.65
+            ignore_eos: false
+            injection_strategy: adaptive
+            layered_summon: false
+            load_format: dummy_dtensor
+            log_prob_max_token_len_per_gpu: 9216
+            log_prob_micro_batch_size: 128
+            log_prob_micro_batch_size_per_gpu: 128
+            log_prob_use_dynamic_bsz: true
+            max_model_len: null
+            max_num_batched_tokens: 9216
+            max_num_seqs: 1024
+            max_prefix_len: 8192
+            max_prefix_ratio: 1
+            min_prefix_ratio: 1
+            mode: sync
+            multi_stage_wake_up: false
+            multi_turn:
+                enable: false
+                format: hermes
+                interaction_config_path: null
+                max_assistant_turns: null
+                max_parallel_calls: 1
+                max_tool_response_length: 256
+                max_user_turns: null
+                tokenization_sanity_check_mode: strict
+                tool_config_path: null
+                tool_response_truncate_side: middle
+                use_inference_chat_template: false
+            "n": 8
+            n_prefix: 2
+            n_val: 8
+            name: vllm
+            pass_num: 4
+            prefix_linear_max_ratio: 0.8
+            prefix_linear_max_var: 0.1
+            prefix_reward_strategy: all
+            prefix_reward_weight_alpha: 1
+            prefix_reward_weight_beta: 1
+            prefix_share_across_samples: false
+            prefix_steps: 1000
+            prefix_strategy: random
+            prompt_length: 1024
+            response_length: 8192
+            skip_dump_dir: /tmp/rollout_dump
+            skip_rollout: false
+            target_selection_strategy: best_k
+            temperature: 1
+            tensor_model_parallel_size: 4
+            top_k: -1
+            top_p: 1
+            trace:
+                backend: null
+                token2text: false
+            update_weights_bucket_megabytes: 512
+            use_adaptive_k: true
+            val_kwargs:
+                do_sample: true
+                "n": 1
+                temperature: 0.6
+                top_k: -1
+                top_p: 1
+            val_temperature: 0.6
+algorithm:
+    value:
+        _target_: verl.trainer.config.AlgoConfig
+        adv_estimator: grpo
+        filter_groups:
+            _target_: verl.trainer.config.FilterGroupsConfig
+            enable: false
+            max_num_gen_batches: 10
+            metric: seq_reward
+        gamma: 1
+        kl_ctrl:
+            _target_: verl.trainer.config.KLControlConfig
+            horizon: 10000
+            kl_coef: 0
+            target_kl: 0.1
+            type: fixed
+        kl_penalty: kl
+        lam: 1
+        norm_adv_by_std_in_grpo: false
+        pf_ppo:
+            reweight_method: pow
+            weight_pow: 2
+        use_kl_in_reward: false
+        use_pf_ppo: false
+critic:
+    value:
+        _target_: verl.workers.config.FSDPCriticConfig
+        checkpoint:
+            _target_: verl.trainer.config.CheckpointConfig
+            async_save: false
+            load_contents:
+                - model
+                - optimizer
+                - extra
+            save_contents:
+                - model
+                - optimizer
+                - extra
+        cliprange_value: 0.5
+        enable: null
+        forward_max_token_len_per_gpu: 32768
+        forward_micro_batch_size: null
+        forward_micro_batch_size_per_gpu: null
+        grad_clip: 1
+        loss_agg_mode: token-mean
+        model:
+            _target_: verl.workers.config.FSDPCriticModelCfg
+            enable_activation_offload: false
+            enable_gradient_checkpointing: true
+            external_lib: null
+            fsdp_config:
+                _target_: verl.workers.config.FSDPEngineConfig
+                forward_prefetch: false
+                fsdp_size: -1
+                offload_policy: false
+                optimizer_offload: false
+                param_offload: false
+                reshard_after_forward: true
+                wrap_policy:
+                    min_num_params: 0
+            lora_alpha: 16
+            lora_rank: 0
+            path: ~/models/deepseek-llm-7b-chat
+            target_modules: all-linear
+            tokenizer_path: /mnt/data2/radke149/models/Qwen2.5-7B-Instruct
+            trust_remote_code: false
+            use_remove_padding: false
+            use_shm: false
+        optim:
+            _target_: verl.workers.config.FSDPOptimizerConfig
+            lr: 1e-05
+            lr_warmup_steps: -1
+            lr_warmup_steps_ratio: 0
+            min_lr_ratio: null
+            total_training_steps: 510
+            warmup_style: constant
+            weight_decay: 0.01
+        ppo_epochs: 1
+        ppo_max_token_len_per_gpu: 32768
+        ppo_micro_batch_size: null
+        ppo_micro_batch_size_per_gpu: null
+        ppo_mini_batch_size: 32
+        profiler:
+            _target_: verl.utils.profiler.ProfilerConfig
+            all_ranks: false
+            discrete: false
+            ranks: []
+        rollout_n: 8
+        shuffle: false
+        strategy: fsdp
+        ulysses_sequence_parallel_size: 1
+        use_dynamic_bsz: true
+custom_reward_function:
+    value:
+        name: compute_score
+        path: null
+data:
+    value:
+        accuracy_lower_bound: 0
+        accuracy_upper_bound: 1
+        add_tgt_acc_upper_bound: 0.5
+        add_tgt_with_acc: false
+        custom_cls:
+            name: null
+            path: null
+        datagen:
+            name: null
+            path: null
+        dataloader_num_workers: 8
+        disable_truncation_advantage: false
+        filter_accuracy: false
+        filter_overlong_prompts: false
+        filter_overlong_prompts_workers: 1
+        filter_targets: false
+        gen_batch_size: 32
+        image_key: images
+        length_strategy: short
+        max_available_targets: 4
+        max_prompt_length: 1024
+        max_response_length: 8192
+        num_off_policy_targets: 2
+        prompt_key: prompt
+        return_full_prompt: false
+        return_multi_modal_inputs: true
+        return_raw_chat: false
+        return_raw_input_ids: false
+        reward_fn_key: data_source
+        reward_impl_version: 5
+        sample_target_ratio: 1
+        sampler:
+            class_name: null
+            class_path: null
+        shuffle: true
+        tokenizer: null
+        train_batch_size: 32
+        train_files: /mnt/data2/radke149/AMPO//data/openr1_math_4longcots.parquet
+        truncation: right
+        trust_remote_code: false
+        use_shm: false
+        val_batch_size: 512
+        val_files: /mnt/data2/radke149/AMPO//data/valid.parquet
+        val_reward_impl_version: 5
+        validation_shuffle: false
+        video_key: videos
+ray_init:
+    value:
+        num_cpus: null
+        timeline_json_file: null
+reward_model:
+    value:
+        compute_score_name: mean_exp_log_softmax
+        enable: false
+        format_coefficient: 0.1
+        format_mode: R1_nothink
+        forward_max_token_len_per_gpu: 32768
+        gt_tokens_one_more: false
+        gt_tokens_one_more_adjusted: false
+        launch_reward_fn_async: false
+        max_length: null
+        micro_batch_size: 64
+        micro_batch_size_per_gpu: null
+        mix_type: hard
+        model:
+            external_lib: null
+            fsdp_config:
+                _target_: verl.workers.config.FSDPEngineConfig
+                forward_prefetch: false
+                fsdp_size: -1
+                param_offload: false
+                reshard_after_forward: true
+                wrap_policy:
+                    min_num_params: 0
+            input_tokenizer: /mnt/data2/radke149/models/Qwen2.5-7B-Instruct
+            path: ~/models/FsfairX-LLaMA3-RM-v0.1
+            trust_remote_code: false
+            use_fused_kernels: true
+            use_remove_padding: false
+            use_shm: false
+        off_policy_reward_manager: prob
+        overlong_buffer:
+            enable: false
+            len: 0
+            log: false
+            penalty_factor: 0
+        pr_weight: 0.5
+        profiler:
+            _target_: verl.utils.profiler.ProfilerConfig
+            all_ranks: false
+            discrete: false
+            ranks: []
+        repetition_penalty: true
+        repetition_penalty_max_repetitions_limit: 10
+        reward_kwargs:
+            max_resp_len: 8192
+            overlong_buffer_cfg:
+                enable: false
+                len: 4096
+                log: false
+                penalty_factor: 1
+        reward_manager: naive
+        reward_manager_discrete_function_name: identity
+        reward_manager_shaping_function_name: threshold_0
+        reward_type: pr
+        sandbox_fusion:
+            max_concurrent: 64
+            memory_limit_mb: 1024
+            url: null
+        strategy: fsdp
+        ulysses_sequence_parallel_size: 1
+        use_dynamic_bsz: true
+        val_reward_manager: naive
+        vr_weight: 1
+trainer:
+    value:
+        balance_batch: true
+        controller_nsight_options:
+            cuda-graph-trace: graph
+            cuda-memory-usage: "true"
+            trace: cuda,nvtx,cublas,ucx
+        critic_warmup: 0
+        default_hdfs_dir: null
+        default_local_dir: /mnt/data2/radke149/AMPO//Qwen2.5-7B-Ins/checkpoints/AMPO/Qwen2.5-7B-Ins-AMPO
+        del_local_ckpt_after_load: false
+        device: cuda
+        esi_redundant_time: 0
+        experiment_name: Qwen2.5-7B-Ins-AMPO
+        log_val_generations: 10
+        logger:
+            - console
+            - wandb
+        max_actor_ckpt_to_keep: null
+        max_critic_ckpt_to_keep: null
+        max_optim_to_keep: 2
+        n_gpus_per_node: 8
+        nnodes: 1
+        npu_profile:
+            options:
+                analysis: true
+                level: level1
+                record_shapes: false
+                roles:
+                    - all
+                save_path: ./profiler_data
+                with_cpu: true
+                with_memory: false
+                with_module: false
+                with_npu: true
+                with_stack: false
+        profile_continuous_steps: false
+        profile_steps: null
+        project_name: AMPO
+        ray_wait_register_center_timeout: 300
+        resume_from_path: null
+        resume_mode: auto
+        rollout_data_dir: null
+        save_freq: 50
+        skip_valid_mask: false
+        test_freq: 10
+        total_epochs: 30
+        total_training_steps: 510
+        use_legacy_worker_impl: auto
+        val_before_train: false
+        val_only: false
+        validation_data_dir: null
+        worker_nsight_options:
+            capture-range: cudaProfilerApi
+            capture-range-end: null
+            cuda-graph-trace: graph
+            cuda-memory-usage: "true"
+            kill: none
+            trace: cuda,nvtx,cublas,ucx
