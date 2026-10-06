@@ -78,7 +78,7 @@ filter_groups_metric='seq_reward'
 max_num_gen_batches=10
 
 # Performance Related Parameter
-sp_size=2
+sp_size=1
 use_dynamic_bsz=True
 actor_ppo_max_token_len=$((max_prompt_length + max_response_length))
 infer_ppo_max_token_len=$((max_prompt_length + max_response_length))

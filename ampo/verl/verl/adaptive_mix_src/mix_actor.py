@@ -42,7 +42,7 @@ import verl.utils.torch_functional as verl_F
 from verl import DataProto
 from verl.trainer.ppo.core_algos import agg_loss, get_policy_loss_fn, kl_penalty
 from verl.utils.device import get_device_id, get_device_name, is_cuda_available, is_npu_available
-from verl.utils.fsdp_utils import FSDPModule, fsdp2_clip_grad_norm_
+from verl.utils.fsdp_utils import FSDPModule, fsdp2_clip_grad_norm_, load_fsdp_optimizer, offload_fsdp_optimizer
 from verl.utils.profiler import GPUMemoryLogger
 from verl.utils.py_functional import append_to_dict
 from verl.utils.seqlen_balancing import prepare_dynamic_batch, restore_dynamic_batch
@@ -370,6 +370,12 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
             grad_norm = fsdp2_clip_grad_norm_(self.actor_module.parameters(), max_norm=self.config.grad_clip)
         else:
             grad_norm = torch.nn.utils.clip_grad_norm_(self.actor_module.parameters(), max_norm=self.config.grad_clip)
+        
+        mark("VOR OPTIMIERER SCHRITT LEEREN DIE CACHE")
+        torch.cuda.empty_cache()
+        mark("NACH OPTIMIERER SCHRITT_ GELEERT DIE CACHE VOR HINLADEN OPTIMIERER ZU GPU")
+        load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=get_device_id())
+        mark("NACH OPTIMIERER SCHRITT NACH HINLADEN OPTIMIERER ZUSTAND ZU GPU")
 
         # if grad_norm is not finite, skip the update
         if not torch.isfinite(grad_norm):
@@ -377,6 +383,9 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
             self.actor_optimizer.zero_grad()
         else:
             self.actor_optimizer.step()
+        mark("INNERLICH OPTIMIERER SCHRITT VOR AUSLADEN OPTIMIERER ZU CPU")
+        offload_fsdp_optimizer(optimizer=self.actor_optimizer)
+        mark("INNERLICH OPTIMIERER SCHRITT NACH AUSLADEN OPTIMIERER ZU CPU")
         if self.alpha_optimizer is not None:
             self.alpha_optimizer.step()
         return grad_norm

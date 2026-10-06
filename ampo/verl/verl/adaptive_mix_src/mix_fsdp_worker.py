@@ -682,10 +682,10 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
             mark("AKTUALISIEREN SCHAUSPIELER: VOR PARAMS ZU GPU")
             load_fsdp_model_to_gpu(self.actor_module_fsdp)
             mark("AKTUALISIWREN SCHAUSPIELER: NACH PARAMS ZU GPU")
-        if self._is_offload_optimizer:
-            mark("AKTUALISIEREN SCHAUSPIELER: VOR OPTIMIERE ZUSTAND ZU GPU -- VOR")
-            load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=get_device_id())
-            mark("AKTUALISIEREN SCHAUSPIELER: VOR OPTIMIERE ZUSTAND ZU GPU -- NACH")
+        #if self._is_offload_optimizer:
+        #    mark("AKTUALISIEREN SCHAUSPIELER: VOR OPTIMIERE ZUSTAND ZU GPU -- VOR")
+        #    load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=get_device_id())
+        #    mark("AKTUALISIEREN SCHAUSPIELER: VOR OPTIMIERE ZUSTAND ZU GPU -- NACH")
         with self.ulysses_sharding_manager:
             data = data.to("cpu")  # data will to device with each micro batch on actor.update_policy
 
@@ -719,7 +719,7 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
         if self._is_offload_optimizer:
             mark("VOR AKTUALISIEREN OPTIMIERER ZU CPU")
             offload_fsdp_optimizer(optimizer=self.actor_optimizer)
-            mark*"NACH AKTUALISIEREN OPTIMIERER ZU CPU")
+            mark("NACH AKTUALISIEREN OPTIMIERER ZU CPU")
             log_gpu_memory_usage("After offload actor optimizer during update_actor", logger=logger)
 
         return output
