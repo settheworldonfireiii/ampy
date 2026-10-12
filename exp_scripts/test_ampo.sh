@@ -35,7 +35,7 @@ off_policy_reshape="p_div_p_0.1"
 off_policy_loss_impl='seq' # token or seq
 loss_remove_token_mean=True
 loss_remove_clip=False
-injection_strategy='adaptive' # always or adaptive
+injection_strategy='always' # always or adaptive
 target_selection_strategy='best_k'
 prefix_strategy='random'
 
