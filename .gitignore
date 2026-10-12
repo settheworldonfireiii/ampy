@@ -1,4 +1,27 @@
-/data
-/Qwen2.5-7B-Ins
+# models / checkpoints
+/Qwen*/
+**/checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.bin
 
+# data & caches
+/data/
 /.cache/
+/.triton/
+/.nv/
+/.config/
+/.local/
+
+# experiment logs
+wandb/
+outputs/
+__pycache__/
+*.pyc
+/Qwen*/
+/data/
+/.cache/
+wandb/
+outputs/
+__pycache__/

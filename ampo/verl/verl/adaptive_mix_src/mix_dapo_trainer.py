@@ -1503,7 +1503,8 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
             
             sample_off_policy_batch = self.construct_off_policy_gen_batch(response=sample_off_policy_targets, prompts=sample_off_policy_prompts, batch_size=num_teacher_models)
             sample_off_policy_batch.non_tensor_batch = gen_batch_out.slice(start_idx, start_idx+num_teacher_models).non_tensor_batch
-            
+           
+            print("SHAPE OF SAMPLE OFF POLICY BATCH ", sample_off_policy_batch)
             if self.off_policy_reward_fn is not None:
                 if num_teacher_models > 1:
                     off_policy_ground_truth_list = [ground_truth] * num_teacher_models
@@ -1553,6 +1554,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                     logger.info(f"off_policy responses num <= 1, no sorting needed")
             else:
                 sample_off_policy_batch = sample_off_policy_batch
+                print("SAMPLE OFF POLICY BATCH SHAPE ", sample_off_policy_batch)
                 sample_target_sources = sample_target_sources
                         
             available_targets_batch = sample_off_policy_batch.slice(0, effective_k)

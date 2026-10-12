@@ -907,6 +907,10 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
         self.checkpoint_manager.save_checkpoint(
             local_path=local_path, hdfs_path=hdfs_path, global_step=global_step, max_ckpt_to_keep=max_ckpt_to_keep
         )
+        torch.save(
+            {**self.actor.grad_scaler.state_dict(), "skipped_total": self.actor.grad_scaler_skipped_total},
+            os.path.join(local_path, f"grad_scaler_world_size_{self.world_size}_rank_{self.rank}.pt"),
+        )
         dist.barrier()
 
         if self._is_lora and hasattr(getattr(self, "actor_module", self.actor_module_fsdp), "peft_config"):
@@ -980,6 +984,16 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
         self.checkpoint_manager.load_checkpoint(
             local_path=local_path, hdfs_path=hdfs_path, del_local_after_load=del_local_after_load
         )
+
+        if self._is_actor and local_path is not None:
+            scaler_path = os.path.join(local_path, f"grad_scaler_world_size_{self.world_size}_rank_{self.rank}.pt")
+            if os.path.exists(scaler_path):
+                sd = torch.load(scaler_path)
+                self.actor.grad_scaler_skipped_total = int(sd.pop("skipped_total", 0))
+                self.actor.grad_scaler.load_state_dict(sd)
+            if self.rank == 0:
+                print(f"[grad_scaler] resume: {'loaded ' + scaler_path if os.path.exists(scaler_path) else 'no scaler file'}"
+                      f", scale={self.actor.grad_scaler.get_scale()}", flush=True)
 
         if self._is_offload_param:
             offload_fsdp_model_to_cpu(self.actor_module_fsdp)

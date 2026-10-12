@@ -1,6 +1,0 @@
-wandb: Detected [openai, vertexai] in use.
-wandb: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
-wandb: For more information, check out the docs at: https://weave-docs.wandb.ai
-Checkpoint tracker file does not exist: /mnt/data2/radke149/AMPO//Qwen2.5-7B-Ins/checkpoints/AMPO/Qwen2.5-7B-Ins-AMPO/latest_checkpointed_iteration.txt
-Training from scratch
-Training Progress:   0%|          | 0/510 [00:00<?, ?it/s]

@@ -37,12 +37,16 @@ import os
 import torch
 from torch import nn
 from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+from torch.distributed.fsdp.sharded_grad_scaler import ShardedGradScaler
+
+
 
 import verl.utils.torch_functional as verl_F
 from verl import DataProto
 from verl.trainer.ppo.core_algos import agg_loss, get_policy_loss_fn, kl_penalty
 from verl.utils.device import get_device_id, get_device_name, is_cuda_available, is_npu_available
 from verl.utils.fsdp_utils import FSDPModule, fsdp2_clip_grad_norm_, load_fsdp_optimizer, offload_fsdp_optimizer
+from torch.distributed.fsdp.sharded_grad_scaler import ShardedGradScaler
 from verl.utils.profiler import GPUMemoryLogger
 from verl.utils.py_functional import append_to_dict
 from verl.utils.seqlen_balancing import prepare_dynamic_batch, restore_dynamic_batch
@@ -83,6 +87,10 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
         actor_optimizer: torch.optim.Optimizer = None,
     ):
         super().__init__(config, actor_module, actor_optimizer)
+        self.grad_scaler = ShardedGradScaler(init_scale=4096.0, growth_factor=2.0, backoff_factor=0.5, growth_interval=2000)
+        self.grad_scaler_skipped_total = 0
+        self._last_grad_scale = 4096.0
+        self._last_step_skipped = 0.0
         self.use_adaptive_temperature = self.config.get('use_adaptive_temperature', False)
         self.adaptive_temperature_target_entropy = self.config.get('adaptive_temperature_target_entropy', 1.0)
         if self.use_adaptive_temperature:
@@ -327,7 +335,7 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
                         )
                         kl_loss = agg_loss(loss_mat=kld, loss_mask=response_mask, loss_agg_mode=loss_agg_mode)
 
-                        policy_loss = policy_loss + kl_loss * self.config.kl_loss_coef
+                        rolicy_loss = policy_loss + kl_loss * self.config.kl_loss_coef
                         micro_batch_metrics['actor/kl_loss'] = kl_loss.detach().item()
                         micro_batch_metrics['actor/kl_coef'] = self.config.kl_loss_coef
                         
@@ -337,7 +345,7 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
                     else:
                         loss = policy_loss * loss_scale_factor
                     mark("AKTUALISIEREN: VOR ZURUCK BACKWARD")
-                    loss.backward()
+                    self.grad_scaler.scale(loss).backward()
                     mark("AKTUALISIEREN: NACH ZURUCK BACKWARD")
 
                     
@@ -354,7 +362,7 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
                 mark("AKTUALISIEREN: VOR OPTIMIERE SCHRITT")
                 grad_norm = self._optimizer_step()
                 mark("AKTUALISIEREN: NACH OPTIMIERER SCHRITT")
-                mini_batch_metrics = {'actor/grad_norm': grad_norm.detach().item()}
+                mini_batch_metrics = {'actor/grad_norm': grad_norm.detach().item(), 'actor/grad_scale': self.grad_scaler.get_scale(), 'actor/grad_scaler_skipped': self._last_step_skipped,'actor/grad_scaler_skipped_total': self.grad_scaler_skipped_total}
                 append_to_dict(metrics, mini_batch_metrics)
         self.actor_optimizer.zero_grad()
         if self.alpha_optimizer is not None:
@@ -363,7 +371,9 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
     
     def _optimizer_step(self):
         assert self.config.grad_clip is not None
+        
 
+        self.grad_scaler.unscale_(self.actor_optimizer)
         if isinstance(self.actor_module, FSDP):
             grad_norm = self.actor_module.clip_grad_norm_(max_norm=self.config.grad_clip)
         elif isinstance(self.actor_module, FSDPModule):
@@ -371,21 +381,26 @@ class MIXDataParallelPPOActor(DataParallelPPOActor):
         else:
             grad_norm = torch.nn.utils.clip_grad_norm_(self.actor_module.parameters(), max_norm=self.config.grad_clip)
         
-        mark("VOR OPTIMIERER SCHRITT LEEREN DIE CACHE")
-        torch.cuda.empty_cache()
-        mark("NACH OPTIMIERER SCHRITT_ GELEERT DIE CACHE VOR HINLADEN OPTIMIERER ZU GPU")
-        load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=get_device_id())
-        mark("NACH OPTIMIERER SCHRITT NACH HINLADEN OPTIMIERER ZUSTAND ZU GPU")
 
         # if grad_norm is not finite, skip the update
+        self._last_grad_scale = self.grad_scaler.get_scale()
         if not torch.isfinite(grad_norm):
             print(f"WARN: rank {torch.distributed.get_rank()} grad_norm is not finite: {grad_norm}")
+            self._last_step_skipped = 1.0
+            self.grad_scaler_skipped_total += 1
             self.actor_optimizer.zero_grad()
         else:
+            mark("VOR OPTIMIERER SCHRITT LEEREN DIE CACHE")
+            torch.cuda.empty_cache()
+            mark("NACH OPTIMIERER SCHRITT_ GELEERT DIE CACHE VOR HINLADEN OPTIMIERER ZU GPU")
+            load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=get_device_id())
+            mark("NACH OPTIMIERER SCHRITT NACH HINLADEN OPTIMIERER ZUSTAND ZU GPU")
             self.actor_optimizer.step()
-        mark("INNERLICH OPTIMIERER SCHRITT VOR AUSLADEN OPTIMIERER ZU CPU")
-        offload_fsdp_optimizer(optimizer=self.actor_optimizer)
-        mark("INNERLICH OPTIMIERER SCHRITT NACH AUSLADEN OPTIMIERER ZU CPU")
+            mark("INNERLICH OPTIMIERER SCHRITT VOR AUSLADEN OPTIMIERER ZU CPU")
+            offload_fsdp_optimizer(optimizer=self.actor_optimizer)
+            mark("INNERLICH OPTIMIERER SCHRITT NACH AUSLADEN OPTIMIERER ZU CPU")
+        
+        self.grad_scaler.update() 
         if self.alpha_optimizer is not None:
             self.alpha_optimizer.step()
         return grad_norm

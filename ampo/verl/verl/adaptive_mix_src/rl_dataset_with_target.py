@@ -104,9 +104,11 @@ class RLHFDatasetWithTarget(RLHFDataset):
         messages = self._build_messages(row_dict)
 
         # chat = row_dict.pop(self.prompt_key)
+        if "Qwen3" not in self.tokenizer.name_or_path:
+            prompt_with_chat_template = self.tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
+        else:
+            prompt_with_chat_template = "\n\n".join(m['content'] for m in messages)
 
-        prompt_with_chat_template = self.tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
-        
         raw_prompt = prompt_with_chat_template # for text-only data
         model_inputs = self.tokenizer(raw_prompt, return_tensors="pt", add_special_tokens=False)
         input_ids = model_inputs.pop("input_ids")
