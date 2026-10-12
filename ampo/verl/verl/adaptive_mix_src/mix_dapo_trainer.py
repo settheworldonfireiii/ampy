@@ -1189,6 +1189,15 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                     # implement critic warmup
                     if self.config.trainer.critic_warmup <= self.global_steps:
                         # update actor
+                        _R = int(self.config.actor_rollout_ref.rollout.get('repeat_off_policy_targets', 1))
+                        _n = self.config.actor_rollout_ref.rollout.n
+                        _off_rows = batch.batch['prefix_mask'].any(-1).nonzero(as_tuple=True)[0].tolist()
+                        _copies = defaultdict(int)
+                        for _row in _off_rows:
+                            _copies[(batch.non_tensor_batch['uid'][_row], batch.batch['responses'][_row].cpu().numpy().tobytes())] += 1
+                        metrics['injection/teacher_rows_in_update'] = len(_off_rows)
+                        metrics['injection/distinct_teacher_traces_in_update'] = len(_copies)
+
                         with marked_timer("update_actor", timing_raw, "red"):
                             actor_output = self.actor_rollout_wg.update_actor(batch)
                         actor_output_metrics = reduce_metrics(actor_output.meta_info["metrics"])
@@ -1292,6 +1301,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
         n = self.config.actor_rollout_ref.rollout.n
         n_prefix = self.config.actor_rollout_ref.rollout.n_prefix
         pass_num = self.config.actor_rollout_ref.rollout.get('pass_num', 1)
+        repeat_off_policy_targets = int(self.config.actor_rollout_ref.rollout.get("repeat_off_policy_targets", 1))
         
         if 'tgt_input_ids' not in gen_batch.batch or n_prefix <= 0: 
             gen_batch_out.batch['prefix_mask'] = prefix_mask
@@ -1428,6 +1438,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
 
             import random
             num_incorrect = len(incorrect_positions)
+            max_selections = min(effective_k * repeat_off_policy_targets, num_incorrect)
             if num_incorrect > 0: 
                 if not self.config.actor_rollout_ref.rollout.prefix_share_across_samples:
                     assert prefix_strategy != 'linear', "Linear strategy is not implemented with prefix_share_across_samples=False ! "
@@ -1474,7 +1485,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                         else:
                             raise NotImplementedError(f"Prefix strategy {prefix_strategy} is not implemented!")
                 else:                                
-                    max_selections = min(effective_k, num_incorrect)
+                    max_selections = min(effective_k*repeat_off_policy_targets, num_incorrect)
                     if prefix_strategy == 'linear':
                         selected_incorrect_positions = incorrect_positions[:max_selections]
                         ratio = min((global_steps / prefix_steps), 1.0)
@@ -1581,9 +1592,17 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                 available_targets_reward_results = self.reward_fn(available_targets_batch, return_dict=True)
                 available_targets_reward_tensor = available_targets_reward_results['reward_tensor']
                 available_targets_batch.batch['rm_scores'] = available_targets_reward_tensor
-                                                
-            available_indices = list(range(len(available_targets_batch)))
             
+            # 3 lines below added by Ivan to make it 4t4s
+            if repeat_off_policy_targets > 1:
+                available_targets_batch = available_targets_batch.repeat(repeat_times=repeat_off_policy_targets, interleave = True)
+                available_target_sources = [src for src in available_target_sources for _ in range(repeat_off_policy_targets)]
+            available_indices = list(range(len(available_targets_batch)))
+
+
+
+
+
             # print(f'available_indices: {available_indices}')
             for j in incorrect_positions:
                 global_idx = start_idx + j

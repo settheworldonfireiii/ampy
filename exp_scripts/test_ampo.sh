@@ -113,6 +113,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_d
     actor_rollout_ref.rollout.n=${n_resp_per_prompt} \
     actor_rollout_ref.rollout.pass_num=${pass_num} \
     actor_rollout_ref.rollout.use_adaptive_k=${use_adaptive_k} \
+    actor_rollout_ref.rollout.repeat_off_policy_targets=${repeat_off_policy_targets} \
     algorithm.use_kl_in_reward=${use_kl_in_reward} \
     algorithm.kl_ctrl.kl_coef=${kl_coef} \
     algorithm.norm_adv_by_std_in_grpo=False \

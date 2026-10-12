@@ -197,7 +197,7 @@ class RLHFDatasetWithTarget(RLHFDataset):
                     sorted_target_list = sorted(target_list, key=lambda x: x['quality_score'], reverse=True) # sort by quality_score
                 elif self.length_strategy == 'long':
                     sorted_target_list = sorted(target_list, key=lambda x: x['quality_score'], reverse=False) # sort by quality_score
-                target_source_list = [tgt['source'] for tgt in sorted_target_list]
+                target_source_list = [tgt['source'] for tgt in sorted_target_list][:self.max_num_targets]
                 tgt_input_ids_lst = [self._process_target(tgt['content'], prompt_with_chat_template, add_eos=True) for tgt in sorted_target_list]
                 if len(tgt_input_ids_lst) <= self.max_num_targets:
                     tgt_input_ids_lst.extend([torch.zeros_like(tgt_input_ids_lst[0]).fill_(self.tokenizer.pad_token_id)] * (self.max_num_targets - len(tgt_input_ids_lst)))
