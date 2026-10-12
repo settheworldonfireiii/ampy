@@ -1461,7 +1461,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                                 if idx < len(prefix_fix_ratios):
                                     sample_ratios[pos] = prefix_fix_ratios[idx]
                     else:                                    
-                        max_selections = min(effective_k, num_incorrect)
+                        #max_selections = min(effective_k, num_incorrect)
                         if prefix_strategy == 'random':
                             selected_incorrect_positions = random.sample(incorrect_positions, max_selections)
                             for pos in selected_incorrect_positions:
