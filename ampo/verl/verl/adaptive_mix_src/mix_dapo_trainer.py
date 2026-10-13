@@ -76,6 +76,9 @@ import logging
 logger = logging.getLogger(__file__)
 logger.setLevel(os.getenv('VERL_PPO_LOGGING_LEVEL', 'INFO'))
 
+from verl.utils.mem_debug import host_mem
+
+
 def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, norm_adv_by_std_in_grpo=True, config: Optional[AlgoConfig] = None,):
     # prepare response group
     # Back-compatible with trainers that do not compute response mask in fit
@@ -1202,7 +1205,7 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                             actor_output = self.actor_rollout_wg.update_actor(batch)
                         actor_output_metrics = reduce_metrics(actor_output.meta_info["metrics"])
                         metrics.update(actor_output_metrics)
-
+                    print("[host] VOR VAL", host_mem(), flush=True)
                     # validate
                     if (
                         self.val_reward_fn is not None
@@ -1213,16 +1216,19 @@ class MIXRayDAPOTrainer(RayPPOTrainer):
                             val_metrics: dict = self._validate()
                             if is_last_step:
                                 last_val_metrics = val_metrics
+                        print("[host] NACH VAL", host_mem(), flush=True)
                         if 'avg_score' not in val_metrics:
                             val_metrics['avg_score'] = np.mean([val_metrics[key] for key in val_metrics if key.startswith('val/test_score/')])
                         metrics.update(val_metrics)
                         self.maybe_save_best_hf(val_metrics)
+                        print("[host] NACH VAL+BEST_HF", host_mem(), flush=True)
 
                     if self.config.trainer.save_freq > 0 and (
                         is_last_step or self.global_steps % self.config.trainer.save_freq == 0
                     ):
                         with marked_timer("save_checkpoint", timing_raw, "green"):
                             self._save_checkpoint()
+                            print("[host] NACH CKPT", host_mem(), flush=True)
 
                 with marked_timer("stop_profile", timing_raw):
                     next_step_profile = (

@@ -479,6 +479,7 @@ def direct_match_mcq(output, gt):
 
 def compute_score(model_output: str, ground_truth: str) -> bool:
     model_output = str(model_output)
+    model_output = model_output.replace("I hope it is correct.", "")
     ground_truth = str(ground_truth)
 
     if 'user\n' in model_output:

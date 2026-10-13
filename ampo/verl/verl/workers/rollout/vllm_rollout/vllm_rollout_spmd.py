@@ -59,7 +59,7 @@ from verl.utils.torch_functional import get_response_mask, pad_2d_list_to_length
 from verl.workers.rollout.base import BaseRollout
 
 
-from verl.utils.mem_debug import mark
+from verl.utils.mem_debug import mark, register_vllm
 
 logger = logging.getLogger(__file__)
 logger.setLevel(os.getenv("VERL_LOGGING_LEVEL", "WARN"))
@@ -179,7 +179,7 @@ class vLLMRollout(BaseRollout):
                 )
             else:
                 logger.warning(f"cudagraph_capture_sizes must be a list, but got {cudagraph_capture_sizes}")
-
+        
         self.inference_engine = LLM(
             model=model_path,
             enable_sleep_mode=config.free_cache_engine,
@@ -203,6 +203,7 @@ class vLLMRollout(BaseRollout):
             **lora_kwargs,
             **engine_kwargs,
         )
+        register_vllm(self.inference_engine)
 
         # Offload vllm model to reduce peak memory usage
         if config.free_cache_engine:

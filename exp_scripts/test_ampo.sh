@@ -7,6 +7,9 @@ export WANDB_API_KEY="wandb_v1_0UJBTdHPeXZZagJj44tz1C0C8M7_xSilULyegHH3goRjqvVXY
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export RAY_LOGGING_LEVEL=DEBUG
 export HYDRA_FULL_ERROR=1
+export MALLOC_ARENA_MAX=2
+
+
 
 project_name='AMPO'
 exp_name='Qwen3-0.6B-CoT-AMPO-LUFFY'
@@ -19,11 +22,14 @@ cd $HOME/ampo/verl
 MODEL_PATH="/mnt/data2/radke149/models/Qwen3-0.6B-CoT"
 CKPTS_DIR="${HOME}/Qwen3-0.6B-Ins/checkpoints/${project_name}/${exp_name}"
 TRAIN_FILE="/mnt/data2/radke149/LUFFY/data/openr1.parquet"
-TEST_FILE="/mnt/data2/radke149/LUFFY/data/valid.parquet"
+TEST_FILE="/mnt/data2/radke149/LUFFY/data/valid_tiny.parquet"
+
 
 # MIX 
 num_off_policy_targets=1
+num_neg_off_policy_targets=1
 repeat_off_policy_targets=2
+repeat_neg_off_policy_targets=2
 max_available_targets=4
 pass_num=4
 use_adaptive_k=True
@@ -51,8 +57,8 @@ adv_estimator=grpo
 clip_ratio_low=0.2
 clip_ratio_high=0.2
 
-max_prompt_length=$((1024 * 1))
-max_response_length=$((1024 * 8))
+max_prompt_length=$((512))
+max_response_length=$((1024))
 enable_overlong_buffer=False
 overlong_buffer_len=$((1024 * 4))
 overlong_penalty_factor=1.0
@@ -94,6 +100,7 @@ use_kl_loss=False
 kl_loss_coef=0.0
 
 # 4 x H100
+rm -rf "${CKPTS_DIR}_fast"
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_dapo \
     algorithm.adv_estimator=${adv_estimator} \
     data.train_files="${TRAIN_FILE}" \
@@ -106,6 +113,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_d
     data.val_batch_size=${val_prompt_bsz} \
     data.shuffle=True \
     data.num_off_policy_targets=${num_off_policy_targets} \
+    data.num_neg_targets=${num_neg_off_policy_targets} \
     data.max_available_targets=${max_available_targets} \
     data.length_strategy=${length_strategy} \
     data.reward_impl_version=${reward_impl_version} \
@@ -114,6 +122,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_d
     actor_rollout_ref.rollout.pass_num=${pass_num} \
     actor_rollout_ref.rollout.use_adaptive_k=${use_adaptive_k} \
     actor_rollout_ref.rollout.repeat_off_policy_targets=${repeat_off_policy_targets} \
+    actor_rollout_ref.rollout.repeat_neg_targets=${repeat_neg_off_policy_targets} \
     algorithm.use_kl_in_reward=${use_kl_in_reward} \
     algorithm.kl_ctrl.kl_coef=${kl_coef} \
     algorithm.norm_adv_by_std_in_grpo=False \
@@ -191,7 +200,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_d
     reward_model.val_reward_manager=${val_reward_manager} \
     reward_model.format_mode=R1_nothink \
     reward_model.format_coefficient=0 \
-    trainer.logger='["console","wandb"]' \
+    trainer.logger='["console"]' \
     trainer.project_name="${project_name}" \
     trainer.experiment_name="${exp_name}" \
     trainer.n_gpus_per_node="${NGPUS_PER_NODE}" \
@@ -200,11 +209,11 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m verl.adaptive_mix_src.main_mix_d
     trainer.test_freq=1 \
     trainer.save_freq=1 \
     trainer.total_epochs=30 \
-    trainer.total_training_steps=510 \
+    trainer.total_training_steps=2 \
     +trainer.max_actor_ckpt_to_keep=2 \
-    trainer.default_local_dir="${CKPTS_DIR}" \
+    trainer.default_local_dir="${CKPTS_DIR}_fast" \
     trainer.default_hdfs_dir=null \
-    trainer.resume_mode=auto \
+    trainer.resume_mode=disable \
     actor_rollout_ref.nccl_timeout=7200 \
     actor_rollout_ref.rollout.engine_kwargs.vllm.swap_space=0 \
     trainer.log_val_generations=10

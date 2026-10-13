@@ -741,6 +741,8 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
             else self.tokenizer.pad_token_id,
         }
         prompts.meta_info.update(meta_info)
+        tag = "VAL" if prompts.meta_info.get("validate", False) else "TRAIN"
+        mark(f"{tag} GEN: ANFANG")
         timing_generate = {}
         with self.rollout_sharding_manager:
             log_gpu_memory_usage("After entering rollout sharding manager", logger=logger)
@@ -759,6 +761,7 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
 
         # clear kv cache
         get_torch_device().empty_cache()
+        mark(f"{tag} GEN: ENDE nach empty_cache")
         return output
 
     @register(dispatch_mode=make_nd_compute_dataproto_dispatch_fn(mesh_name="actor"))
@@ -900,6 +903,7 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
 
         # only support save and load ckpt for actor
         assert self._is_actor
+        mark("CKPT: ANFANG")
 
         if self._is_offload_param:
             load_fsdp_model_to_gpu(self.actor_module_fsdp)
@@ -946,10 +950,12 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
 
         if self._is_offload_param:
             offload_fsdp_model_to_cpu(self.actor_module_fsdp)
+        mark("CKPT: ENDE")
             
     @register(dispatch_mode=Dispatch.ONE_TO_ALL)
     def save_checkpoint_hf(self, local_path):
         assert self._is_actor
+        mark("BEST HF: ANFANG")
         import torch
         if self._is_offload_param:
             load_fsdp_model_to_gpu(self.actor_module_fsdp)
@@ -968,6 +974,7 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
         torch.distributed.barrier()
         if self._is_offload_param:
             offload_fsdp_model_to_cpu(self.actor_module_fsdp)
+            mark("BEST HF: ENDE")
 
     @register(dispatch_mode=Dispatch.ONE_TO_ALL)
     def load_checkpoint(self, local_path, hdfs_path=None, del_local_after_load=False):
@@ -996,7 +1003,9 @@ class MIXActorRolloutRefWorker(Worker, DistProfilerExtension):
                       f", scale={self.actor.grad_scaler.get_scale()}", flush=True)
 
         if self._is_offload_param:
+            mark("VOR BEST HF ENDE AUSLADEN")
             offload_fsdp_model_to_cpu(self.actor_module_fsdp)
+            mark("BEST HF: ENDE")
 
         if self._is_offload_optimizer:
             offload_fsdp_optimizer(self.actor_optimizer)
